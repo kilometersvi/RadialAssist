@@ -11,6 +11,7 @@
 cd /home/pi/Documents/RadialAssist
 
 # update
+wget -q --spider http://google.com > /dev/null
 while [ $? -eq 1 ]
 do
     ((c++)) && ((c==10)) && c=0 && break
