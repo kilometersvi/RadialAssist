@@ -13,7 +13,7 @@ cd /home/pi/Documents/RadialAssist
 # install dependencies, adjust path
 pip3 install -r src/requirements.txt
 echo "dependencies installed"
-grep -q '/home/pi/.local/bin' <<< "$PATH" && echo "PATH is correct" || PATH="$PATH:/home/pi/.local/bin" && echo "PATH updated"
+grep -q '/home/pi/.local/bin' <<< "$PATH" && echo "PATH is correct" || PATH="$PATH:/home/pi/.local/bin"
 
 # update
 wget -q --spider http://google.com > /dev/null

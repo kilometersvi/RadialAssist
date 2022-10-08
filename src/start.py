@@ -1,6 +1,8 @@
 import os
 import time
-from Dongleless-myo.dongleless import dongleless
+import importlib
+dongleless = importlib.import_module("Dongleless-myo.dongleless")
+#from Dongleless-myo.dongleless import dongleless
 
 def unknown(myo):
     print("unknown")
