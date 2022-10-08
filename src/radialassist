@@ -11,7 +11,7 @@
 cd /home/pi/Documents/RadialAssist
 
 # update
-netstat = $(wget -q --spider http://google.com
+netstat = $(wget -q --spider http://google.com)
 echo $(netstat)
 while [ $(netstat)? -eq 1 ]
 do
