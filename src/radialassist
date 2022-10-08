@@ -29,6 +29,7 @@ wget -q --spider http://google.com > /dev/null
 if [ $? -eq 0 ]; then
     eval "$(ssh-agent -s)"
     git pull -f
+    git submodule update --init --recursive
 else
     echo "Failed to update."
 fi
