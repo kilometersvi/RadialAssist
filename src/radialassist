@@ -11,17 +11,18 @@
 cd /home/pi/Documents/RadialAssist
 
 # update
-netstat = $(wget -q --spider http://google.com)
-echo $(netstat)
-while [ $(netstat)? -eq 1 ]
+netstat = 1
+while [ $(netstat) -eq 1 ]
 do
-    netstat = $(wget -q --spider http://google.com)
+    wget -q --spider http://google.com
+    netstat = $?
     ((c++)) && ((c==10)) && c=0 && break
     echo $c
+    echo $(netstat)
     sleep 2
 done
 
-if [ $(netstat)? -eq 0 ]; then
+if [ $(netstat) -eq 0 ]; then
     eval "$(ssh-agent -s)"
     git pull -f
 else
