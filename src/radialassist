@@ -1,0 +1,24 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides: RadialAssistService
+# Required-Start:    $all
+# Required-Stop:
+# Default-Start:     5
+# Default-Stop:      6
+# Short-Description: Your service description
+### END INIT INFO
+
+cd /home/pi/Documents/RadialAssist
+
+# update
+wget -q --spider http://google.com
+if [ $? -eq 0 ]; then
+    eval "$(ssh-agent -s)"
+    git pull -f
+else
+    echo "Failed to update."
+fi
+
+# launch
+mkdir -p logs
+sudo python3 /src/start.py >> /logs/logfile.log 2>&1
