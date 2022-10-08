@@ -1,0 +1,3 @@
+[submodule "src/src/Dongleless-myo"]
+	path = src/src/Dongleless-myo
+	url = git@github.com:mamo91/Dongleless-myo.git
