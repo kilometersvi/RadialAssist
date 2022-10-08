@@ -9,8 +9,6 @@
 ### END INIT INFO
 
 cd /home/pi/Documents/RadialAssist
-pwd
-echo $$
 
 # update
 wget -q --spider http://google.com
@@ -26,4 +24,5 @@ mkdir -p logs
 touch logs/logfile.log
 
 # launch
+echo "Launching..."
 python3 src/start.py >> logs/logfile.log 2>&1

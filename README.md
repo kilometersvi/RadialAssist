@@ -2,7 +2,7 @@
 
 reqs:
 
-add this line to /etc/profile: sudo exec /home/pi/Documents/RadialAssist/src/radialassist
+add this line to /etc/profile: ./home/pi/Documents/RadialAssist/src/radialassist
 
 clone of this repo into home/pi/Documents
 
