@@ -1,0 +1,3 @@
+[submodule "src/Dongleless_myo"]
+	path = src/Dongleless_myo
+	url = git@github.com:Wildream/Dongleless-myo.git
