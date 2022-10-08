@@ -19,6 +19,9 @@ else
     echo "Failed to update."
 fi
 
-# launch
+# create log struct
 mkdir -p logs
+touch /logs/logfile.log
+
+# launch
 sudo python3 /src/start.py >> /logs/logfile.log 2>&1
