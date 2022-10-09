@@ -23,7 +23,7 @@ def main():
     print(f"### {time.asctime(time.localtime())} ###")
     print("Running RadialAssist service v0.1...")
 
-
+    '''
     function_dict = {
         "unknown":unknown,
         "arm_synced":arm_synced,
@@ -31,8 +31,9 @@ def main():
         "imu_data":imu_data,
         "emg_data":emg_data
     }
+    '''
 
-    dongleless.run(function_dict)
+    dongleless.run()#function_dict)
 
 if __name__ == "__main__":
     main()
