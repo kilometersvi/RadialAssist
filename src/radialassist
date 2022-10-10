@@ -13,7 +13,11 @@ cd /home/pi/Documents/RadialAssist
 # install dependencies, adjust path
 pip3 install -r src/requirements.txt
 echo "dependencies installed"
+
+#bluepy fixes
 grep -q '/home/pi/.local/bin' <<< "$PATH" && echo "PATH is correct" || PATH="$PATH:/home/pi/.local/bin"
+sudo setcap cap_net_raw+e /home/pi/.local/lib/python3.9/site-packages/bluepy/bluepy-helper
+sudo setcap cap_net_admin+eip /home/pi/.local/lib/python3.9/site-packages/bluepy/bluepy-helper
 
 # update
 wget -q --spider http://google.com > /dev/null
