@@ -33,7 +33,7 @@ def main():
     }
     '''
 
-    dongleless.run()#function_dict)
+    dongleless.run(useMyoGrapher=False)#function_dict)
 
 if __name__ == "__main__":
     main()
