@@ -1,0 +1,33 @@
+#!/bin/bash
+
+cd /home/pi/Documents/RadialAssist
+
+
+# update
+wget -q --spider http://google.com > /dev/null
+while [ $? -eq 1 ]
+do
+    ((c++)) && ((c==10)) && c=0 && break
+    echo $c
+    sleep 2
+    wget -q --spider http://google.com > /dev/null
+done
+
+wget -q --spider http://google.com > /dev/null
+if [ $? -eq 0 ]; then
+    eval "$(ssh-agent -s)"
+    git pull -f --recurse-submodules
+    git submodule update --init --recursive --remote
+else
+    echo "Failed to update."
+fi
+
+
+# install dependencies, adjust path
+pip3 install -r src/requirements.txt
+echo "dependencies installed"
+
+# bluepy fixes
+grep -q '/home/pi/.local/bin' <<< "$PATH" && echo "PATH is correct" || PATH="$PATH:/home/pi/.local/bin"
+sudo setcap cap_net_raw+e /home/pi/.local/lib/python3.9/site-packages/bluepy/bluepy-helper
+sudo setcap cap_net_admin+eip /home/pi/.local/lib/python3.9/site-packages/bluepy/bluepy-helper
